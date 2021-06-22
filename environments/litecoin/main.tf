@@ -15,6 +15,15 @@ module "aws-iam-default" {
   source = "../../modules/aws-iam-default"
 }
 
+module "aws-iam-default-with-suffix" {
+  environment = var.environment
+  account-id = var.AWS_ACCOUNT_ID
+  iam-entities = var.default-iam-entities
+  with_suffix = true
+
+  source = "../../modules/aws-iam-default"
+}
+
 module "aws-ecr" {
   repositories = var.aws-ecr-repositories
 

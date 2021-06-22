@@ -40,7 +40,7 @@ resource "aws_iam_group_policy_attachment" "group-policy" {
 resource "aws_iam_user" "user" {
   for_each = var.iam-entities
 
-  name = var.with_suffix ? "${var.environment}-${each.value}-policy" : "${var.environment}-${each.value}"
+  name = var.with_suffix ? "${var.environment}-${each.value}-user" : "${var.environment}-${each.value}"
   path = "/default/${var.environment}/${each.value}/"
 }
 

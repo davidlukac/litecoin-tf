@@ -1,0 +1,10 @@
+# IDES
+.idea
+
+# Terraform data
+.terraform
+terraform.tfstate.d
+
+# Sensitive files
+secret.auto.tfvars
+output

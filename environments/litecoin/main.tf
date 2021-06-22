@@ -30,6 +30,13 @@ module "aws-ecr" {
   source = "../../modules/aws-ecr"
 }
 
+module "aws-eks-cluster" {
+  name = var.cluster-name
+  region = var.aws-region
+
+  source = "../../modules/aws-eks"
+}
+
 module "k8s-resources" {
   namespaces = var.k8s-namespaces
   data-root = var.LITECOIN_DATA_ROOT

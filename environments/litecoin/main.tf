@@ -12,3 +12,10 @@ module "aws-ecr" {
 
   source = "../../modules/aws-ecr"
 }
+
+module "k8s-resources" {
+  namespaces = var.k8s-namespaces
+  data-root = var.LITECOIN_DATA_ROOT
+
+  source = "../../modules/k8s-resources"
+}

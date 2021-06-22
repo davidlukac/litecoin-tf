@@ -4,6 +4,10 @@ terraform {
       source = "hashicorp/aws"
       version = "3.46.0"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = "2.3.2"
+    }
   }
 }
 
@@ -21,3 +25,9 @@ provider "aws" {
   }
 }
 
+// Simplest solution for the PoC - using local Docker Desktop Kubernetes. Normally this would be e.g. authentication via
+// a services account token for the terraform provisioner service account.
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+  config_context = "docker-desktop"
+}
